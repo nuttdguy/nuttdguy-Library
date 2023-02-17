@@ -63,10 +63,7 @@ public class BookService {
      * @return all available books (bookCount over zero)
      */
     public List<Book> getAllAvailableBooks() {
-        return bookDAO.getAllBooks()
-            .stream()
-            .filter(book -> book.getCopies_available() > 0)
-            .toList();
+        return bookDAO.getBooksWithBookCountOverZero();
     }
 
 }
