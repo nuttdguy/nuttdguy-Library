@@ -161,6 +161,7 @@ public class LibraryAppTest {
         Book b3 = new Book(106, 4, "understanding media", 1);
         Book b4 = new Book(107, 5, "critique of pure reason", 7);
         List<Book> availableBooks = bookDAO.getBooksWithBookCountOverZero();
+
         Assert.assertTrue(availableBooks.contains(b0));
         Assert.assertTrue(availableBooks.contains(b1));
         Assert.assertTrue(availableBooks.contains(b2));
@@ -256,6 +257,7 @@ public class LibraryAppTest {
         if(returnedBooks == null){
             Assert.fail();
         }else{
+            bookListOverZero.forEach(System.out::println);
             Assert.assertTrue(returnedBooks.contains(b1));
             Assert.assertTrue(returnedBooks.contains(b3));
             Assert.assertFalse(returnedBooks.contains(b2));
